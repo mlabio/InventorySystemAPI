@@ -22,7 +22,7 @@ build:
   
 deploy:
   stage: deploy
-  script: xcopy /y /s "$project/bin/Release/Publish\*.*" "https://Devpartners.co/Inventory/api/"
+  script: 'xcopy /y /s "$project/bin/Release/Publish\*.*" "https://Devpartners.co/Inventory/api/"'
 
 dependencies:
   - build
