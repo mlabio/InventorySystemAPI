@@ -2,10 +2,9 @@ image: microsoft/dotnet:latest
 
 stages:
   - build
-  - test
 
 variables:
-  project: "InventorySystemAPI.sln"
+  project: "InventorySystemAPI"
 
 before_script:
   - "dotnet restore"
@@ -13,15 +12,8 @@ before_script:
 build:
   stage: build
   variables:
-    build_path: "$project/src/$project"
+    build_path: "$project"
   script:
     - "cd $build_path"
     - "dotnet build"
 
-test:
-  stage: test
-  variables:
-    test_path: "$project/test/$project.Tests"
-  script:
-    - "cd $test_path"
-    - "dotnet test"
