@@ -19,12 +19,12 @@ build:
     - "dotnet build"
   artifacts:
     paths: 
-    - '$project/bin/Release/Publish/''
+    - '$project/bin/Release/Publish/'
   
 deploy:
   stage: deploy
   script: 
-    - 'xcopy /y /s "$project/bin/Release/Publish\*.*" "https://Devpartners.co/Inventory/api/"'
+    - 'xcopy /y /s "$project/bin/Release/Publish/*.*" "https://Devpartners.co/Inventory/api/"'
 
 dependencies:
   - build
