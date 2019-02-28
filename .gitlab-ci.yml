@@ -18,7 +18,8 @@ build:
     - "cd $build_path"
     - "dotnet build"
   artifacts:
-    paths: "$project/bin/Release/Publish/"
+    paths: 
+    - '$project/bin/Release/Publish/''
   
 deploy:
   stage: deploy
